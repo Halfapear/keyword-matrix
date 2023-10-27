@@ -373,6 +373,21 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>LCD1602.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\LCD1602.c</FilePath>
+            </File>
+            <File>
+              <FileName>MatrixKey.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MatrixKey.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
