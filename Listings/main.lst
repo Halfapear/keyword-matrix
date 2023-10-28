@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   MAIN                                                                  10/27/2023 22:36:13 PAGE 1   
+C51 COMPILER V9.54   MAIN                                                                  10/28/2023 22:01:09 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
@@ -15,55 +15,50 @@ line level    source
    5          
    6          
    7          void main(){
-   8   1              int Password = 0,KeyNum,n[4],i;
+   8   1              int Password = 0,KeyNum,n,i;
    9   1          LCD_Init();
   10   1          LCD_ShowString(1,1,"Password");
   11   1              while(1){
-  12   2                  //??while ????,????????,??????Password???Password???????f u
-  13   2                  // if(KeyNum)
-  14   2                  //     {
-  15   2                      // for(i=0;i<4;i++){
-  16   2                      //         n[i]=MatrixKey();
-  17   2                      //         Password =Password *10 + n[i];
-  18   2                      //         LCD_ShowNum(2,1,Password,4);
-  19   2                      //         }
-  20   2                      n[0]=MatrixKey();
-  21   2                      LCD_ShowNum(2,1,Password,4);
-  22   2                      n[1]=MatrixKey();
-  23   2                      LCD_ShowNum(2,1,Password,4);
-  24   2                      n[2]=MatrixKey();
-  25   2                      LCD_ShowNum(2,1,Password,4);
-  26   2                      n[3]=MatrixKey();
-  27   2                      LCD_ShowNum(2,1,Password,4);
-  28   2                      Password =n[3]*1000 + n[2]*100 + n[1]*10 + n[0]*1;
-  29   2                      // if(KeyNum==11){
-  30   2                              if (Password == 628){
-  31   3                                      LCD_ShowString(1,1,"yeah");
-  32   3                                  while(1){}
-  33   3                              }
-  34   2                              else{
-  35   3                                      LCD_ShowString(1,1,"f**k you");
-  36   3                                  while(1){}
-  37   3                              }
-  38   2                      // }
-  39   2              
-  40   2          }
-  41   1      }
-*** WARNING C280 IN LINE 8 OF main.c: 'KeyNum': unreferenced local variable
+  12   2                KeyNum = MatrixKey();
+  13   2                  //??while ????,????????,??????Password???Password???????f u
+  14   2                  if(KeyNum)
+  15   2                      {
+  16   3      //                for(i=0;i<4;i++){
+  17   3      //                  KeyNum = MatrixKey();
+  18   3      //                  if(KeyNum){
+  19   3                        if(KeyNum <=10){
+  20   4                              Password = Password *10;
+  21   4                              Password =Password + KeyNum%10;
+  22   4                        }
+  23   3      //                        }
+  24   3      //                      }
+  25   3                        
+  26   3                      if(KeyNum==11){
+  27   4                              if (Password == 628){
+  28   5                                      LCD_ShowString(1,1,"yeah");
+  29   5                                  while(1){}
+  30   5                              }
+  31   4                              else{
+  32   5                                      LCD_ShowString(1,1,"f**k you");
+  33   5                                  while(1){}
+  34   5                              }
+  35   4                      }
+  36   3              }
+  37   2          }
+  38   1      }
+*** WARNING C280 IN LINE 8 OF main.c: 'n': unreferenced local variable
 *** WARNING C280 IN LINE 8 OF main.c: 'i': unreferenced local variable
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    208    ----
+   CODE SIZE        =    118    ----
    CONSTANT SIZE    =     23    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      14
+   DATA SIZE        =   ----       6
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
-
-C51 COMPILER V9.54   MAIN                                                                  10/27/2023 22:36:13 PAGE 2   
 
 
 C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)
